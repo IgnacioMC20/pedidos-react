@@ -1,0 +1,7 @@
+/* styles.css */
+html,
+body {
+  height: 100vh; /* Establece la altura del 100% de la ventana */
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el relleno predeterminado */
+}
