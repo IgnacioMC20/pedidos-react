@@ -1,11 +1,14 @@
 import { createContext } from "react";
+import { IUser } from "../../database/usuarios";
 
 interface ContextProps {
     isLoggedIn: boolean;
     id: string;
+    name: string;
+    users: IUser[]
 
     //Methods
-    handleLogin?: () => void
+    handleLogin?: (user: IUser) => void
     handleLogout?: () => void
     handleRegister?: () => void
 }

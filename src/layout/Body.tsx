@@ -13,11 +13,13 @@ export const Body = () => {
                         Productos
                     </Typography>
                     <Box m={2} />
-                    {
-                        productos.map((producto) => (
-                            <Products key={producto.slug} {...producto} />
-                        ))
-                    }
+                    <Box sx={{overflow: 'scroll', maxHeight: '57vh'}}>
+                        {
+                            productos.map((producto) => (
+                                <Products key={producto.slug} {...producto} />
+                            ))
+                        }
+                    </Box>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography variant='h3'>
