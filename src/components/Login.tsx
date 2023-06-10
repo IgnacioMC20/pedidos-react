@@ -14,14 +14,15 @@ export const Login = () => {
         event.preventDefault();
         console.log({userName, password})
         // Realizar acciones con los datos del formulario, como enviarlos a un servidor
-        const user = usuario.filter( user => user.usuario === userName );
-        // console.log(user[0])
-        if(user.length > 0){
-            handleLogin(user[0] || {});
+        const [user] = usuario.filter( user => user.usuario === userName );
+        if(user){
+            handleLogin(user);
             handleCloseLogin();
+            console.log(user)
             
         }else{
             // no existe
+            console.log('no existe')
         }
 
         // Restablecer los campos del formulario
