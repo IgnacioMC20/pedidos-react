@@ -1,7 +1,13 @@
+import { useContext } from 'react'
+import { UserContext } from '../context/user/UserContext'
 import { PedidosI } from '../database/pedidos'
 import { Button, Card, CardContent, Typography } from '@mui/material'
+import { CartContext } from '../context/cart/CartContext'
 
 export const Pedidos = ({ id, tipo, nombreQuienEnvia, descripcion, fechaEntrega, fechaRecoleccion, items, costo }: PedidosI) => {
+    const { name } = useContext(UserContext)
+    const { handleRemovePedido } = useContext(CartContext)
+
     return (
         <Card sx={{ margin: '5px 3px' }}>
             <CardContent>
@@ -26,11 +32,15 @@ export const Pedidos = ({ id, tipo, nombreQuienEnvia, descripcion, fechaEntrega,
                 <Typography variant="body2" color="text.secondary">
                     Cost: ${costo}
                 </Typography>
-                <Button>
-                    <Typography>
-                        Editar
-                    </Typography>
-                </Button>
+                {
+                    (name === nombreQuienEnvia) && (
+                        <Button onClick={() => handleRemovePedido(id)}>
+                            <Typography color={'red'}>
+                                Borrar Pedido
+                            </Typography>
+                        </Button>
+                    )
+                }
             </CardContent>
         </Card>
     )

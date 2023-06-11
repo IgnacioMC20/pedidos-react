@@ -3,7 +3,7 @@ export interface IUser {
     name: string;
     email: string;
     password: string;
-    role: string;
+    role: 'client' | 'admin';
     usuario: string
 }
 export const usuario: IUser[] = [
@@ -22,5 +22,13 @@ export const usuario: IUser[] = [
         password: '123456',
         role: 'client',
         usuario: 'adr'
+    },
+    {
+        id: '65432asdf',
+        name: 'Adrian',
+        email: 'adrian@adrian.com',
+        password: '123456',
+        role: 'client',
+        usuario: 'adri'
     }
 ]

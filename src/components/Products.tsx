@@ -1,7 +1,11 @@
 import { Card, CardContent, Typography, Button } from '@mui/material';
 import { ProductosI } from '../database/productos'
+import { CartContext } from '../context/cart/CartContext';
+import { useContext } from 'react';
 
-export const Products = ({ title, type, gender, description, inStock, price, tags }: ProductosI) => {
+export const Products = (product: ProductosI) => {
+    const { title, type, gender, description, inStock, price, tags } = product
+    const {handleAddProduct} = useContext(CartContext)
     return (
         <Card>
             <CardContent>
@@ -23,7 +27,7 @@ export const Products = ({ title, type, gender, description, inStock, price, tag
                 <Typography variant="body2" color="text.secondary">
                     Tags: {tags.join(', ')}
                 </Typography>
-                <Button>
+                <Button onClick={() => handleAddProduct(product)}>
                     <Typography>
                         Agregar +
                     </Typography>

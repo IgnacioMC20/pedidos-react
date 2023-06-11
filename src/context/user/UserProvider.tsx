@@ -22,6 +22,7 @@ export const UserProvider: FC<{children: React.ReactNode}> = ({children}) => {
     const [state, dispatch] = useReducer(userReducer, USER_INITIAL_STATE);
     const handleLogin = (user: IUser) => (dispatch({type: '[user] loggin', payload: user }))
     const handleLogout = () => (dispatch({type: '[user] logout'}))
+    const handleRegister = (user: IUser) => (dispatch({type: '[user] register user', payload: user}))
     return (
         <UserContext.Provider
           value={{
@@ -29,7 +30,8 @@ export const UserProvider: FC<{children: React.ReactNode}> = ({children}) => {
     
             //Methods
             handleLogin,
-            handleLogout
+            handleLogout,
+            handleRegister
           }}
         >
           {children}

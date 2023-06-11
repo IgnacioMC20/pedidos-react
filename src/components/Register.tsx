@@ -1,5 +1,8 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { TextField, Button } from '@mui/material';
+import { UserContext } from '../context/user/UserContext';
+import { IUser } from '../database/usuarios';
+import { UIContext } from '../context/ui/UIContext';
 
 export const Register = () => {
     const [nombre, setNombre] = useState('');
@@ -7,12 +10,25 @@ export const Register = () => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
+
+    const { handleRegister } = useContext(UserContext);
+    const { handleCloseRegister } = useContext(UIContext);
+
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        console.log({userName, password, email, nombre})
-        // Realizar acciones con los datos del formulario, como enviarlos a un servidor
+        console.log({ userName, password, email, nombre })
 
-        // Restablecer los campos del formulario
+        const newUser: IUser = {
+            id: (Math.floor(Math.random() * (10000 - 3 + 1)) + 3).toString(),
+            name: nombre,
+            usuario: userName,
+            password,
+            email,
+            role: 'client'
+        }
+        handleRegister(newUser)
+        handleCloseRegister();
+
         setNombre('');
         setUserName('');
         setPassword('');

@@ -16,7 +16,7 @@ export interface PedidosI {
 export const pedidos: PedidosI[] = [
     {
         id: '1',
-        nombreQuienEnvia: 'Pedro',
+        nombreQuienEnvia: 'Adrian',
         tipo: 'individual',
         descripcion: 'descripcion 1',
         fechaEntrega: '1/1/1',
@@ -26,7 +26,7 @@ export const pedidos: PedidosI[] = [
     },
     {
         id: '2',
-        nombreQuienEnvia: 'Pedro',
+        nombreQuienEnvia: 'Adrian',
         tipo: 'individual',
         descripcion: 'descripcion 2',
         fechaEntrega: '1/1/1',
@@ -34,15 +34,4 @@ export const pedidos: PedidosI[] = [
         items: 6,
         costo: 500,
     },
-    {
-        id: '3',
-        nombreQuienEnvia: 'Pedro',
-        tipo: 'combo',
-        descripcion: 'descripcion 3',
-        fechaEntrega: '1/1/1',
-        fechaRecoleccion: '1/2/1',
-        items: 2,
-        costo: 140,
-    },
-
 ]

@@ -16,13 +16,18 @@ export const Login = () => {
         // Realizar acciones con los datos del formulario, como enviarlos a un servidor
         const [user] = usuario.filter( user => user.usuario === userName );
         if(user){
-            handleLogin(user);
-            handleCloseLogin();
-            console.log(user)
+            if(user.password === password){
+                handleLogin(user);
+            }else{
+                setPassword('');
+                return alert('Usuario o Contraseña erroneos')
+            }
             
+            handleCloseLogin();
         }else{
             // no existe
             console.log('no existe')
+            alert('Usuario o Contraseña erroneos')
         }
 
         // Restablecer los campos del formulario

@@ -10,7 +10,7 @@ interface ContextProps {
     //Methods
     handleLogin?: (user: IUser) => void
     handleLogout?: () => void
-    handleRegister?: () => void
+    handleRegister?: (user: IUser) => void
 }
 
 export const UserContext = createContext({} as ContextProps);
