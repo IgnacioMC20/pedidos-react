@@ -1,9 +1,9 @@
 name: Deploy to prod
 on: 'workflow_dispatch'
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: GetCode
+      - name: deploying
         run: echo "deploying"
           
