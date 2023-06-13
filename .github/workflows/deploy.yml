@@ -1,0 +1,9 @@
+name: Deploy to prod
+on: 'workflow_dispatch'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GetCode
+        run: echo "deploying"
+          
