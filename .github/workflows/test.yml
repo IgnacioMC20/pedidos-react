@@ -8,12 +8,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: GetCode
-        uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with: 
-          node-version: 18
+      - name: installing node
+        run: echo "installing node..."
+      - name: testing
+        run: echo "testing..."
       - name: Deploy to prod
         uses: ./.github/workflows/deploy.yml
   
