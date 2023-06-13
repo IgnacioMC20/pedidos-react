@@ -13,5 +13,5 @@ jobs:
       - name: testing
         run: echo "testing..."
       - name: Deploy to prod
-        uses: IgnacioMC20/pedidos-react/blob/main/.github/workflows/deploy.yml
+        uses: IgnacioMC20/pedidos-react/.github/workflows/deploy.yml
   
