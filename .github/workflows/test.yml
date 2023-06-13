@@ -15,5 +15,5 @@ jobs:
         with: 
           node-version: 18
       - name: Deploy to prod
-        uses: ./deploy.yml
+        uses: ./.github/workflows/deploy.yml
   
